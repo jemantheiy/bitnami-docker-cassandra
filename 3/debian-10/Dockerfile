@@ -17,6 +17,7 @@ RUN . /opt/bitnami/scripts/libcomponent.sh && component_unpack "cassandra" "3.11
 RUN chmod g+rwX /opt/bitnami
 RUN ln -s /opt/bitnami/scripts/cassandra/entrypoint.sh /entrypoint.sh
 RUN ln -s /opt/bitnami/scripts/cassandra/run.sh /run.sh
+RUN swapoff --all
 
 COPY rootfs /
 RUN /opt/bitnami/scripts/cassandra/postunpack.sh
